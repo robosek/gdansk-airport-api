@@ -1,0 +1,5 @@
+### GET arrivals
+http://localhost:5000/arrivals?max=5
+
+### GET departures 
+http://localhost:5000/departures?max=5
