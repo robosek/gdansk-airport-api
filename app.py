@@ -16,11 +16,15 @@ FLIGHT_ROUTE_CLASS_NAME = 'zkm-schedule__route'
 URL_ARRIVALS = os.environ['ARRIVALS_URL']
 URL_DEPARTURES = os.environ['DEPARTURES_URL']
 
+LANDED = 'wylądował'
+STARTED = 'wystartował'
+
 def is_current_flight(flight):
-    return 'wylądował' not in flight['details'].lower()
+    details = flight['details'].lower()
+    return LANDED not in details and STARTED not in details
 
 def filter_already_landed(flights):
-        return list(filter(lambda x: is_current_flight(x), flights))
+    return list(filter(lambda x: is_current_flight(x), flights))
 
 def parse_flight_info(flight_schedule, max_number = -1):
     results = []
