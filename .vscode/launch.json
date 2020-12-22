@@ -5,8 +5,12 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
+            "program": "app.py",
+            "console": "integratedTerminal",
+            "env": {
+                "ARRIVALS_URL": "https://komunikacja.trojmiasto.pl/lotnisko/",
+                "DEPARTURES_URL": "https://komunikacja.trojmiasto.pl/lotnisko/?odloty"
+            }
         },
         {
             "name": "Docker: Python - Flask",
